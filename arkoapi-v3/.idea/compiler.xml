@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="arkoapi-common" />
+        <module name="arkoapi-database" />
+        <module name="arkoapi-oraxen" />
+        <module name="arkoapi-velocity" />
+        <module name="arkoapi-paper" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="arkoapi-common" options="-parameters" />
+      <module name="arkoapi-database" options="-parameters" />
+      <module name="arkoapi-oraxen" options="-parameters" />
+      <module name="arkoapi-paper" options="-parameters" />
+      <module name="arkoapi-v3" options="-parameters" />
+      <module name="arkoapi-velocity" options="-parameters" />
+    </option>
+  </component>
+</project>

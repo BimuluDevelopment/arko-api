@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dk.arko</groupId>
+        <artifactId>arkoapi-v3</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>arkoapi-velocity</artifactId>
+    <packaging>jar</packaging>
+    <name>ArkoAPI Velocity</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>dk.arko</groupId>
+            <artifactId>arkoapi-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dk.arko</groupId>
+            <artifactId>arkoapi-database</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.velocitypowered</groupId>
+            <artifactId>velocity-api</artifactId>
+            <version>${velocity.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.zaxxer.hikari</pattern>
+                                    <shadedPattern>dk.arko.api.libs.hikari</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.flywaydb</pattern>
+                                    <shadedPattern>dk.arko.api.libs.flyway</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com.github.benmanes.caffeine</pattern>
+                                    <shadedPattern>dk.arko.api.libs.caffeine</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>io.lettuce</pattern>
+                                    <shadedPattern>dk.arko.api.libs.lettuce</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

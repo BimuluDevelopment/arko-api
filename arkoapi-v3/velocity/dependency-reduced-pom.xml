@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>arkoapi-v3</artifactId>
+    <groupId>dk.arko</groupId>
+    <version>3.0.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>arkoapi-velocity</artifactId>
+  <name>ArkoAPI Velocity</name>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <relocations>
+                <relocation>
+                  <pattern>com.zaxxer.hikari</pattern>
+                  <shadedPattern>dk.arko.api.libs.hikari</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.flywaydb</pattern>
+                  <shadedPattern>dk.arko.api.libs.flyway</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>com.github.benmanes.caffeine</pattern>
+                  <shadedPattern>dk.arko.api.libs.caffeine</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>io.lettuce</pattern>
+                  <shadedPattern>dk.arko.api.libs.lettuce</shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.velocitypowered</groupId>
+      <artifactId>velocity-api</artifactId>
+      <version>3.4.0-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

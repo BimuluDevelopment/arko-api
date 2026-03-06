@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dk.arko</groupId>
+    <artifactId>arkoapi-v3</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>ArkoAPI v3</name>
+    <description>Comprehensive Minecraft Server Network API - Paper &amp; Velocity</description>
+
+    <modules>
+        <module>common</module>
+        <module>database</module>
+        <module>paper</module>
+        <module>velocity</module>
+        <module>oraxen</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Minecraft -->
+        <paper.version>1.21.4-R0.1-SNAPSHOT</paper.version>
+        <velocity.version>3.4.0-SNAPSHOT</velocity.version>
+        <adventure.version>4.17.0</adventure.version>
+
+        <!-- Database -->
+        <hikari.version>6.2.1</hikari.version>
+        <postgresql.version>42.7.4</postgresql.version>
+        <flyway.version>10.22.0</flyway.version>
+
+        <!-- Utilities -->
+        <gson.version>2.11.0</gson.version>
+        <guava.version>33.4.0-jre</guava.version>
+        <caffeine.version>3.1.8</caffeine.version>
+        <lettuce.version>6.5.1.RELEASE</lettuce.version>
+        <snakeyaml.version>2.3</snakeyaml.version>
+
+        <!-- Hooks -->
+        <placeholderapi.version>2.11.6</placeholderapi.version>
+        <luckperms.version>5.4</luckperms.version>
+        <oraxen.version>1.167.0</oraxen.version>
+        <worldedit.version>7.3.9</worldedit.version>
+        <protocollib.version>5.3.0</protocollib.version>
+        <fancyholograms.version>2.4.0</fancyholograms.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+        <repository>
+            <id>oraxen</id>
+            <url>https://repo.oraxen.com/releases/</url>
+        </repository>
+        <repository>
+            <id>enginehub</id>
+            <url>https://maven.enginehub.org/repo/</url>
+        </repository>
+        <repository>
+            <id>dmulloy2</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Internal Modules -->
+            <dependency>
+                <groupId>dk.arko</groupId>
+                <artifactId>arkoapi-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dk.arko</groupId>
+                <artifactId>arkoapi-database</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dk.arko</groupId>
+                <artifactId>arkoapi-paper</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dk.arko</groupId>
+                <artifactId>arkoapi-velocity</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dk.arko</groupId>
+                <artifactId>arkoapi-oraxen</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Adventure -->
+            <dependency>
+                <groupId>net.kyori</groupId>
+                <artifactId>adventure-api</artifactId>
+                <version>${adventure.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.kyori</groupId>
+                <artifactId>adventure-text-minimessage</artifactId>
+                <version>${adventure.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.kyori</groupId>
+                <artifactId>adventure-text-serializer-plain</artifactId>
+                <version>${adventure.version}</version>
+            </dependency>
+
+            <!-- Database -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikari.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-database-postgresql</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+
+            <!-- Redis -->
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce.version}</version>
+            </dependency>
+
+            <!-- Caching -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <!-- Utilities -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,7 @@
+package dk.arko.api.velocity.command.annotation;
+import java.lang.annotation.*;
+@Target(ElementType.METHOD) @Retention(RetentionPolicy.RUNTIME)
+public @interface VSubCommand {
+    String name();
+    String description() default "";
+}

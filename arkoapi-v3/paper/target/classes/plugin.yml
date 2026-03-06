@@ -1,0 +1,15 @@
+name: ArkoAPI
+version: '3.0.0'
+main: dk.arko.api.paper.plugin.ArkoPlugin
+api-version: '1.21'
+description: Comprehensive Minecraft Server Network API
+author: Louis
+website: https://arkomc.dk
+
+softdepend:
+  - PlaceholderAPI
+  - LuckPerms
+  - Oraxen
+  - ProtocolLib
+  - WorldEdit
+  - FancyHolograms

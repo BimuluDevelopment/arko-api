@@ -1,0 +1,13 @@
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\cache\CacheManager.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\config\ConfigManager.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\cooldown\CooldownManager.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\events\EventBus.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\messaging\PluginMessenger.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\messaging\RedisMessenger.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\registry\Registry.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\registry\ServiceRegistry.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\scheduling\TaskScheduler.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\text\TextUtil.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\tuple\Pair.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\tuple\Triple.java
+C:\Users\tryll\Downloads\arkoapi-v3\arkoapi-v3\common\src\main\java\dk\arko\api\common\validation\Validator.java

@@ -1,0 +1,49 @@
+# ┌──────────────────────────────────────────────┐
+# │         ArkoAPI v3 Configuration              │
+# │    Comprehensive Minecraft Network API        │
+# └──────────────────────────────────────────────┘
+
+# Unique server identifier (used for Redis pub/sub and cross-server messaging)
+server-id: "server-1"
+
+# ─── PostgreSQL Database ────────────────────────
+database:
+  host: "localhost"
+  port: 5432
+  database: "minecraft"
+  username: "minecraft"
+  password: "changeme"
+  # Optional: set a specific schema (null = default public schema)
+  schema: null
+  pool:
+    # Max connections in pool (20 for 1000+ players, 30 for 2000+)
+    max-size: 20
+    # Minimum idle connections (keep warm for fast acquisition)
+    min-idle: 10
+    # Connection timeout in ms (5s default, 3s for massive networks)
+    connection-timeout: 5000
+    # Max connection lifetime in ms (30 minutes)
+    max-lifetime: 1800000
+    # Idle timeout in ms (10 minutes)
+    idle-timeout: 600000
+    # Leak detection threshold in ms (30 seconds)
+    leak-detection: 30000
+
+# ─── Redis (Cross-Server Communication) ────────
+redis:
+  # Redis connection URI
+  uri: "redis://localhost:6379"
+  # Optional password (set to "" for no auth)
+  password: ""
+
+# ─── Cache Settings ────────────────────────────
+cache:
+  # Default player data cache TTL in minutes
+  player-cache-ttl: 10
+  # Max cached players (should be > max concurrent players)
+  player-cache-max-size: 2000
+
+# ─── Debug ──────────────────────────────────────
+debug: false
+# Log pool statistics every N minutes (0 = disabled)
+pool-stats-interval: 5
